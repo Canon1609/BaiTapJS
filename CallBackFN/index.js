@@ -72,5 +72,19 @@ var index = a.findIndex(function(value){
     return value == 2;
 });
 console.log("FINDINDEX: ",index);
+//prototype.every
+Array.prototype.every = function(callback){
+    for(var i = 0; i < this.length; i++){
+        if(!callback(this[i], i, this)){
+            return false;
+        }
+    }
+    return true;
+}
+
+var all = a.every(function(value){
+    return value < 11;
+});
+console.log("EVERY: ",all);
 
 
